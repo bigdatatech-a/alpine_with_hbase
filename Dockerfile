@@ -22,4 +22,6 @@ RUN echo "    <value>/hbase/zookeeper</value>" >> /hbase/conf/hbase-site.xml
 RUN echo "  </property>" >> /hbase/conf/hbase-site.xml
 RUN echo "</configuration>" >> /hbase/conf/hbase-site.xml
 
+RUN apk update && apk add git
+
 CMD /hbase/bin/hbase master start
