@@ -7,7 +7,7 @@ RUN mkdir /hbase
 
 RUN wget -q -P /tmp http://www-eu.apache.org/dist/hbase/stable/hbase-1.2.4-bin.tar.gz 
 
-RUN tar xzvf /tmp/hbase-1.2.4-bin.tar.gz && mv /tmp/hbase-1.2.4/* /hbase && rm -rf /tmp/hbase-1.2.4-bin.tar.gz
+RUN tar xzvf /tmp/hbase-1.2.4-bin.tar.gz -C /hbase && mv /hbase/hbase-1.2.4/* /hbase && rm -rf /tmp/hbase-1.2.4-bin.tar.gz
 
 RUN sed -i -e "s/# export JAVA_HOME=\/usr\/java\/jdk1.6.0\//export JAVA_HOME=\/usr\/lib\/jvm\/java-1.8-openjdk/g" /hbase/conf/hbase-env.sh
 
