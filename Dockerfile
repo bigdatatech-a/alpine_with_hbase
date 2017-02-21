@@ -3,7 +3,9 @@ FROM bigdatatech/alpine_with_jdk8
 
 MAINTAINER sandeep <bigdatatechcomputing@gmail.com>
 
-RUN mkdir /hbase && wget -q http://www-eu.apache.org/dist/hbase/stable/hbase-1.2.4-bin.tar.gz /hbase/hbase-1.2.4-bin.tar.gz
+RUN mkdir /hbase
+
+COPY hbase-1.2.4-bin.tar.gz /hbase
 
 RUN tar xzvf /hbase/hbase-1.2.4-bin.tar.gz && mv /hbase/hbase-1.2.4/* /hbase && rm -rf hbase-1.2.4
 
